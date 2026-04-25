@@ -48,7 +48,7 @@ const itemVariants = {
 
 export default function Products() {
   return (
-    <section id="products" className="py-24 bg-slate-950 relative overflow-hidden">
+    <section id="products" className="py-24 bg-black-pure relative overflow-hidden">
       {/* Decorative background gradients for premium feel */}
       <div className="absolute top-0 right-0 w-3/4 h-3/4 bg-gradient-to-bl from-gold-900/10 via-slate-900/5 to-transparent blur-3xl rounded-full z-0 pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-slate-800/20 to-transparent blur-3xl rounded-full z-0 pointer-events-none"></div>
@@ -73,10 +73,10 @@ export default function Products() {
             <motion.div 
               key={product.id} 
               variants={itemVariants}
-              className={`group relative rounded-2xl overflow-hidden bg-slate-900/40 backdrop-blur-md border border-slate-800/60 hover:border-gold-500/40 shadow-lg hover:shadow-2xl hover:shadow-gold-500/10 transition-all duration-500 ${index === 3 || index === 4 ? 'lg:col-span-1.5' : ''}`}
+              className={`group relative rounded-2xl overflow-hidden glass-dark border border-white/5 hover:border-gold-500/40 shadow-lg hover:shadow-2xl hover:shadow-gold-500/20 transition-all duration-500 ${index === 3 || index === 4 ? 'lg:col-span-1.5' : ''}`}
             >
               <div className="aspect-[4/3] w-full overflow-hidden relative">
-                <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
                 <img 
                   src={product.image} 
                   alt={product.name} 
@@ -86,7 +86,7 @@ export default function Products() {
               </div>
               
               {/* Overlay gradient that rises on hover */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
               
               <div className="absolute bottom-0 left-0 p-6 md:p-8 w-full z-30 translate-y-6 group-hover:translate-y-0 transition-transform duration-500 ease-out">
                 <h4 className="text-2xl md:text-3xl font-serif font-bold text-white mb-3 tracking-wide">{product.name}</h4>
@@ -111,7 +111,7 @@ export default function Products() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-16 text-center"
         >
-          <a href="/products" className="inline-flex items-center gap-3 bg-transparent border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-slate-950 px-8 py-4 rounded-full font-bold tracking-wide transition-all duration-300 transform hover:scale-105">
+          <a href="/products" className="inline-flex items-center gap-3 bg-transparent border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-black-pure px-8 py-4 rounded-full font-bold tracking-wide transition-all duration-300 transform hover:scale-105">
             View All Products
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />

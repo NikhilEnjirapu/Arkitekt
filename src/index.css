@@ -6,6 +6,8 @@
   --color-gold-400: #FDE047;
   --color-gold-500: #EAB308;
   --color-gold-600: #CA8A04;
+  --color-charcoal: #0F0F0F;
+  --color-black-pure: #050505;
   --color-slate-850: #151e2e;
   --color-slate-900: #0f172a;
   --color-slate-950: #020617;
@@ -13,12 +15,21 @@
   --font-serif: 'Playfair Display', serif;
 }
 
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+  .glass-dark {
+    @apply bg-black/40 backdrop-blur-xl border border-white/5;
+  }
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-slate-950 text-slate-50 font-sans antialiased;
+    @apply bg-black-pure text-slate-50 font-sans antialiased;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;

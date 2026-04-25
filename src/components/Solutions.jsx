@@ -20,7 +20,7 @@ const solutions = [
 
 export default function Solutions() {
   return (
-    <section id="solutions" className="py-24 md:py-32 bg-slate-900 relative">
+    <section id="solutions" className="py-24 md:py-32 bg-charcoal relative">
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-500/30 to-transparent"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,7 +46,7 @@ export default function Solutions() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="w-full lg:w-3/5 rounded-2xl overflow-hidden shadow-2xl border border-slate-800/80 relative group"
+                className="w-full lg:w-3/5 rounded-2xl overflow-hidden shadow-2xl border border-white/5 relative group"
               >
                 <div className="absolute inset-0 bg-gold-500/20 blur-[100px] -z-10 group-hover:bg-gold-500/30 transition-colors duration-700"></div>
                 <ReactCompareSlider
@@ -61,11 +61,11 @@ export default function Solutions() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                className="w-full lg:w-2/5 space-y-6 md:space-y-8 bg-slate-900/50 p-6 md:p-10 rounded-2xl border border-slate-800/50 backdrop-blur-sm"
+                className="w-full lg:w-2/5 space-y-6 md:space-y-8 glass-dark p-6 md:p-10 rounded-2xl border border-white/5"
               >
                 <h4 className="text-3xl md:text-4xl font-serif font-bold text-white leading-snug">{solution.title}</h4>
                 <p className="text-slate-400 text-base md:text-lg leading-relaxed">{solution.description}</p>
-                <ul className="space-y-4 pt-4 border-t border-slate-800/80">
+                <ul className="space-y-4 pt-4 border-t border-white/5">
                   <li className="flex items-center text-slate-300">
                     <span className="w-2 h-2 bg-gold-500 rounded-full mr-4 shadow-[0_0_8px_rgba(234,179,8,0.8)]"></span>
                     Premium Materials

@@ -78,7 +78,7 @@ export default function AllProducts() {
   }, []);
 
   return (
-    <div className="pt-24 min-h-screen bg-slate-950 relative overflow-hidden">
+    <div className="pt-24 min-h-screen bg-black-pure relative overflow-hidden">
       {/* Decorative background gradients */}
       <div className="absolute top-0 right-0 w-3/4 h-3/4 bg-gradient-to-bl from-gold-900/10 via-slate-900/5 to-transparent blur-3xl rounded-full z-0 pointer-events-none"></div>
       
@@ -101,10 +101,10 @@ export default function AllProducts() {
             <motion.div 
               key={product.id} 
               variants={itemVariants}
-              className="group relative rounded-2xl overflow-hidden bg-slate-900/40 backdrop-blur-md border border-slate-800/60 hover:border-gold-500/40 shadow-lg hover:shadow-2xl hover:shadow-gold-500/10 transition-all duration-500"
+              className="group relative rounded-2xl overflow-hidden glass-dark border border-white/5 hover:border-gold-500/40 shadow-lg hover:shadow-2xl hover:shadow-gold-500/20 transition-all duration-500"
             >
               <div className="aspect-[4/3] w-full overflow-hidden relative">
-                <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
                 <img 
                   src={product.image} 
                   alt={product.name} 
@@ -113,7 +113,7 @@ export default function AllProducts() {
                 />
               </div>
               
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
               
               <div className="absolute bottom-0 left-0 p-6 md:p-8 w-full z-30 translate-y-6 group-hover:translate-y-0 transition-transform duration-500 ease-out">
                 <h4 className="text-2xl md:text-3xl font-serif font-bold text-white mb-3 tracking-wide">{product.name}</h4>

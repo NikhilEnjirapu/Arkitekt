@@ -33,7 +33,7 @@ function App() {
   return (
     <ConfiguratorContext.Provider value={configValue}>
       <Router>
-        <div className="bg-slate-950 min-h-screen font-sans selection:bg-gold-500 selection:text-slate-950">
+        <div className="bg-black-pure min-h-screen font-sans selection:bg-gold-500 selection:text-slate-950">
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -41,7 +41,8 @@ function App() {
           </Routes>
           
           {/* Footer */}
-          <footer className="bg-slate-950 py-12 border-t border-slate-800 text-center">
+          <footer className="bg-black-pure py-16 border-t border-white/5 relative overflow-hidden">
++            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-500/20 to-transparent"></div>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex flex-col items-center">
                 <p className="text-slate-500 font-serif mb-6 flex items-center gap-2">

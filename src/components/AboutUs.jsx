@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export default function AboutUs() {
   return (
-    <section id="about" className="py-24 md:py-32 bg-slate-900 relative overflow-hidden">
+    <section id="about" className="py-24 md:py-32 bg-charcoal relative overflow-hidden">
       {/* Decorative Blur */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-gold-900/10 rounded-full blur-[100px] -translate-y-1/2 pointer-events-none"></div>
 
@@ -18,7 +18,7 @@ export default function AboutUs() {
           >
             <div className="relative group">
               <div className="absolute -inset-4 bg-gold-500/20 blur-2xl rounded-full opacity-50 group-hover:opacity-70 transition-opacity duration-700"></div>
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-800/60 aspect-[4/5] sm:aspect-square lg:aspect-[4/5]">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/5 aspect-[4/5] sm:aspect-square lg:aspect-[4/5]">
                 <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-transparent transition-colors duration-700 z-10"></div>
                 <img 
                   src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
@@ -34,7 +34,7 @@ export default function AboutUs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="absolute -bottom-8 -right-4 md:-right-8 bg-slate-950/80 backdrop-blur-md border border-gold-500/30 p-6 rounded-2xl shadow-xl z-20 hidden sm:block"
+                className="absolute -bottom-8 -right-4 md:-right-8 glass p-6 rounded-2xl shadow-xl z-20 hidden sm:block"
               >
                 <div className="text-4xl font-serif font-bold text-gold-500 mb-1">10+</div>
                 <div className="text-xs text-slate-300 uppercase tracking-widest font-semibold">Years of<br/>Excellence</div>
@@ -65,7 +65,7 @@ export default function AboutUs() {
               </p>
             </div>
             
-            <div className="pt-8 border-t border-slate-800 grid grid-cols-2 gap-8 sm:hidden">
+            <div className="pt-8 border-t border-white/5 grid grid-cols-2 gap-8 sm:hidden">
               {/* Mobile Stats (since badge is hidden on mobile) */}
               <div>
                 <h4 className="text-3xl font-serif font-bold text-gold-500 mb-1">10+</h4>
@@ -77,7 +77,7 @@ export default function AboutUs() {
               </div>
             </div>
             
-            <div className="hidden sm:grid pt-4 grid-cols-2 gap-8">
+            <div className="hidden sm:grid pt-4 grid-cols-2 gap-8 border-t border-white/5">
               <div>
                 <div className="h-0.5 w-12 bg-gold-500 mb-4 rounded-full"></div>
                 <h4 className="text-xl font-bold text-white mb-2">Master Craftsmanship</h4>

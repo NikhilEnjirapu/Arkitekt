@@ -33,7 +33,7 @@ export default function Navbar() {
 
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-slate-950/80 backdrop-blur-md py-4 shadow-lg shadow-black/50' : 'bg-transparent py-6'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'glass-dark py-4 shadow-lg shadow-black/50 border-b border-white/5' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0">
@@ -51,13 +51,13 @@ export default function Navbar() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
-                <div className="absolute right-0 mt-2 w-48 bg-slate-900/95 backdrop-blur-xl border border-slate-800 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 overflow-hidden">
+                <div className="absolute right-0 mt-2 w-48 glass-dark backdrop-blur-xl border border-white/5 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 overflow-hidden">
                   {link.dropdown.map((sub) => (
                     sub.href.startsWith('/') ? (
                       <Link
                         key={sub.name}
                         to={sub.href}
-                        className="block px-4 py-3 text-xs font-medium text-slate-400 hover:text-gold-400 hover:bg-slate-800 transition-colors"
+                        className="block px-4 py-3 text-xs font-medium text-slate-400 hover:text-gold-400 hover:bg-white/5 transition-colors"
                       >
                         {sub.name}
                       </Link>
@@ -65,7 +65,7 @@ export default function Navbar() {
                       <a
                         key={sub.name}
                         href={sub.href}
-                        className="block px-4 py-3 text-xs font-medium text-slate-400 hover:text-gold-400 hover:bg-slate-800 transition-colors"
+                        className="block px-4 py-3 text-xs font-medium text-slate-400 hover:text-gold-400 hover:bg-white/5 transition-colors"
                       >
                         {sub.name}
                       </a>
@@ -94,7 +94,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden absolute top-full left-0 w-full bg-slate-900 border-t border-slate-800"
+            className="md:hidden absolute top-full left-0 w-full glass-dark border-t border-white/5 shadow-2xl"
           >
             <div className="px-4 pt-2 pb-6 space-y-1 shadow-2xl">
               {navLinks.map((link) => (
@@ -106,7 +106,7 @@ export default function Navbar() {
                         key={sub.name}
                         to={sub.href}
                         onClick={() => setMobileMenuOpen(false)}
-                        className="block px-3 py-3 text-base font-medium text-slate-300 hover:text-gold-400 hover:bg-slate-800 rounded-md transition-colors"
+                        className="block px-3 py-3 text-base font-medium text-slate-300 hover:text-gold-400 hover:bg-white/5 rounded-md transition-colors"
                       >
                         {sub.name}
                       </Link>
@@ -115,7 +115,7 @@ export default function Navbar() {
                         key={sub.name}
                         href={sub.href}
                         onClick={() => setMobileMenuOpen(false)}
-                        className="block px-3 py-3 text-base font-medium text-slate-300 hover:text-gold-400 hover:bg-slate-800 rounded-md transition-colors"
+                        className="block px-3 py-3 text-base font-medium text-slate-300 hover:text-gold-400 hover:bg-white/5 rounded-md transition-colors"
                       >
                         {sub.name}
                       </a>

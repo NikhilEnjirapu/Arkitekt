@@ -27,7 +27,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="py-24 md:py-32 bg-slate-950 relative overflow-hidden">
+    <section id="contact" className="py-24 md:py-32 bg-black-pure relative overflow-hidden">
       {/* Premium Decorative Lighting */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-500/50 to-transparent"></div>
       <div className="absolute bottom-0 right-0 w-2/3 h-2/3 bg-gradient-to-tl from-slate-800/30 to-transparent blur-3xl rounded-full z-0 pointer-events-none"></div>
@@ -61,7 +61,7 @@ export default function ContactForm() {
             <div className="space-y-8">
               <div className="flex items-start group">
                 <div className="flex-shrink-0 mt-1">
-                  <div className="w-14 h-14 bg-slate-900 rounded-full flex items-center justify-center text-gold-500 border border-slate-800 group-hover:border-gold-500/50 group-hover:shadow-[0_0_15px_rgba(234,179,8,0.3)] transition-all duration-300">
+                  <div className="w-14 h-14 bg-white/5 backdrop-blur-md rounded-full flex items-center justify-center text-gold-500 border border-white/5 group-hover:border-gold-500/50 group-hover:shadow-[0_0_15px_rgba(234,179,8,0.3)] transition-all duration-300">
                     <MapPin size={24} />
                   </div>
                 </div>
@@ -73,7 +73,7 @@ export default function ContactForm() {
               
               <div className="flex items-start group">
                 <div className="flex-shrink-0 mt-1">
-                  <div className="w-14 h-14 bg-slate-900 rounded-full flex items-center justify-center text-gold-500 border border-slate-800 group-hover:border-gold-500/50 group-hover:shadow-[0_0_15px_rgba(234,179,8,0.3)] transition-all duration-300">
+                  <div className="w-14 h-14 bg-white/5 backdrop-blur-md rounded-full flex items-center justify-center text-gold-500 border border-white/5 group-hover:border-gold-500/50 group-hover:shadow-[0_0_15px_rgba(234,179,8,0.3)] transition-all duration-300">
                     <Phone size={24} />
                   </div>
                 </div>
@@ -85,7 +85,7 @@ export default function ContactForm() {
 
               <div className="flex items-start group">
                 <div className="flex-shrink-0 mt-1">
-                  <div className="w-14 h-14 bg-slate-900 rounded-full flex items-center justify-center text-gold-500 border border-slate-800 group-hover:border-gold-500/50 group-hover:shadow-[0_0_15px_rgba(234,179,8,0.3)] transition-all duration-300">
+                  <div className="w-14 h-14 bg-white/5 backdrop-blur-md rounded-full flex items-center justify-center text-gold-500 border border-white/5 group-hover:border-gold-500/50 group-hover:shadow-[0_0_15px_rgba(234,179,8,0.3)] transition-all duration-300">
                     <Mail size={24} />
                   </div>
                 </div>
@@ -105,7 +105,7 @@ export default function ContactForm() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="lg:w-2/3"
           >
-            <div className="bg-slate-900/50 backdrop-blur-xl p-8 md:p-14 rounded-3xl shadow-2xl border border-slate-800/80">
+            <div className="glass-dark p-8 md:p-14 rounded-3xl shadow-2xl border border-white/5">
               <form ref={form} onSubmit={sendEmail} className="space-y-8">
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -116,7 +116,7 @@ export default function ContactForm() {
                       id="user_name"
                       name="user_name" 
                       placeholder="John Doe" 
-                      className="w-full bg-slate-950/50 border border-slate-800 rounded-xl px-5 py-4 text-white placeholder-slate-600 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all duration-300"
+                      className="w-full bg-black-pure border border-white/5 rounded-xl px-5 py-4 text-white placeholder-slate-600 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all duration-300"
                       required 
                     />
                   </div>
@@ -127,7 +127,7 @@ export default function ContactForm() {
                       id="user_email"
                       name="user_email" 
                       placeholder="john@example.com" 
-                      className="w-full bg-slate-950/50 border border-slate-800 rounded-xl px-5 py-4 text-white placeholder-slate-600 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all duration-300"
+                      className="w-full bg-black-pure border border-white/5 rounded-xl px-5 py-4 text-white placeholder-slate-600 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all duration-300"
                       required 
                     />
                   </div>
@@ -139,7 +139,7 @@ export default function ContactForm() {
                     id="project_type"
                     name="project_type" 
                     defaultValue=""
-                    className="w-full bg-slate-950/50 border border-slate-800 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all duration-300 appearance-none cursor-pointer"
+                    className="w-full bg-black-pure border border-white/5 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all duration-300 appearance-none cursor-pointer"
                     required
                   >
                     <option value="" disabled className="text-slate-500">Select a project type</option>
@@ -158,7 +158,7 @@ export default function ContactForm() {
                     name="message" 
                     placeholder="Tell us about your space and requirements..." 
                     rows="6"
-                    className="w-full bg-slate-950/50 border border-slate-800 rounded-xl px-5 py-4 text-white placeholder-slate-600 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all duration-300 resize-none"
+                    className="w-full bg-black-pure border border-white/5 rounded-xl px-5 py-4 text-white placeholder-slate-600 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all duration-300 resize-none"
                     required
                   ></textarea>
                 </div>

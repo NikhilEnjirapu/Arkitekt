@@ -63,7 +63,7 @@ function ProductHotspot({ position, title, description }) {
         <AnimatePresence>
           {open && (
             <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }}
-              className="w-48 bg-slate-900/95 border border-white/10 p-3 rounded-xl shadow-2xl pointer-events-auto text-white">
+              className="w-48 glass-dark p-3 rounded-xl shadow-2xl pointer-events-auto text-white">
               <div className="flex justify-between items-start mb-1">
                 <span className="text-[10px] font-bold uppercase">{title}</span>
                 <button onClick={() => setOpen(false)} className="text-slate-500">×</button>
@@ -144,12 +144,12 @@ export default function VirtualShowroom() {
   const [doorOpened, setDoorOpened] = useState(false);
 
   return (
-    <div className="w-full h-screen bg-slate-950 relative overflow-hidden">
+    <div className="w-full h-screen bg-black-pure relative overflow-hidden">
       <AnimatePresence>
         {isInside && (
           <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 50 }}
             className="absolute top-24 right-8 z-30 w-72 h-[calc(100vh-12rem)] flex flex-col gap-4">
-            <div className="bg-slate-900/70 backdrop-blur-xl border border-white/10 p-6 rounded-3xl shadow-2xl flex-1 overflow-y-auto">
+            <div className="glass-dark p-6 rounded-3xl shadow-2xl flex-1 overflow-y-auto">
               <div className="mb-6 flex items-center justify-between">
                 <h2 className="text-white font-serif text-xl">Configurator</h2>
                 <button onClick={() => setLightingMode(lightingMode === 'day' ? 'night' : 'day')} className="p-2 rounded-lg bg-white/5 text-gold-500">
@@ -177,14 +177,14 @@ export default function VirtualShowroom() {
                 )}
               </div>
             </div>
-            <button onClick={() => { setIsInside(false); setDoorOpened(false); setCurrentRoom('hallway'); }} className="w-full py-4 bg-slate-900/60 border border-white/10 rounded-2xl text-[10px] font-bold text-slate-400 uppercase tracking-widest">Exit</button>
+            <button onClick={() => { setIsInside(false); setDoorOpened(false); setCurrentRoom('hallway'); }} className="w-full py-4 glass-dark rounded-2xl text-[10px] font-bold text-slate-400 uppercase tracking-widest hover:text-white transition-colors">Exit</button>
           </motion.div>
         )}
       </AnimatePresence>
 
       {isInside && (
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-2 bg-slate-950/80 backdrop-blur-md p-1.5 rounded-2xl border border-white/5 shadow-2xl">
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-2 glass-dark p-1.5 rounded-2xl shadow-2xl">
           {['living', 'kitchen', 'bedroom', 'office', 'hallway'].map((room) => (
             <button key={room} onClick={() => setCurrentRoom(room)} className={`px-4 py-2 rounded-xl text-[10px] font-bold uppercase transition-all ${currentRoom === room ? 'bg-gold-500 text-slate-950' : 'text-slate-500 hover:text-white'}`}>{room}</button>
           ))}
@@ -192,7 +192,7 @@ export default function VirtualShowroom() {
       )}
 
       <Canvas shadows camera={{ position: [0, 5, 15], fov: 45 }}>
-        <color attach="background" args={['#020617']} />
+        <color attach="background" args={['#050505']} />
         <Suspense fallback={null}>
           <Environment preset={lightingMode === 'day' ? "apartment" : "night"} />
           <ambientLight intensity={0.5} />
@@ -211,7 +211,7 @@ export default function VirtualShowroom() {
             <mesh position={[0, 1.6, -8]}><boxGeometry args={[20, 3.2, 0.2]} /><meshStandardMaterial color="#334155" /></mesh>
             <mesh position={[-10, 1.6, 0]} rotation={[0, Math.PI/2, 0]}><boxGeometry args={[16, 3.2, 0.2]} /><meshStandardMaterial color="#334155" /></mesh>
             <mesh position={[10, 1.6, 0]} rotation={[0, -Math.PI/2, 0]}><boxGeometry args={[16, 3.2, 0.2]} /><meshStandardMaterial color="#334155" /></mesh>
-            <mesh position={[0, 3.3, 0]} visible={!isInside}><boxGeometry args={[20.2, 0.2, 16.2]} /><meshStandardMaterial color="#020617" /></mesh>
+            <mesh position={[0, 3.3, 0]} visible={!isInside}><boxGeometry args={[20.2, 0.2, 16.2]} /><meshStandardMaterial color="#050505" /></mesh>
 
             {/* Entry Door */}
             {!doorOpened && (

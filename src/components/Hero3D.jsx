@@ -121,7 +121,7 @@ export default function Hero3D() {
   }, []);
 
   return (
-    <section id="home" className="relative h-screen w-full bg-slate-950 overflow-hidden flex items-center">
+    <section id="home" className="relative h-screen w-full bg-black-pure overflow-hidden flex items-center">
       
       {/* Text Overlay */}
       <div className="absolute z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pointer-events-none">
@@ -139,10 +139,10 @@ export default function Hero3D() {
             Design dreams into reality with premium interior and exterior solutions. We craft spaces that reflect your unique style.
           </p>
           <div className="flex gap-4 pointer-events-auto">
-            <a href="#products" className="bg-gold-500 hover:bg-gold-400 text-slate-950 px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
+            <a href="#products" className="bg-gold-500 hover:bg-gold-400 text-black-pure px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
               Explore Products
             </a>
-            <a href="#contact" className="border border-slate-600 hover:border-gold-500 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300">
+            <a href="#contact" className="border border-white/20 hover:border-gold-500 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300">
               Get a Quote
             </a>
           </div>
@@ -174,8 +174,8 @@ export default function Hero3D() {
       </div>
 
       {/* Gradient Overlay for blending */}
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent pointer-events-none lg:w-2/3" />
-      <div className="absolute bottom-0 w-full h-32 bg-gradient-to-t from-slate-950 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black-pure via-black-pure/80 to-transparent pointer-events-none lg:w-2/3" />
+      <div className="absolute bottom-0 w-full h-32 bg-gradient-to-t from-black-pure to-transparent pointer-events-none" />
     </section>
   );
 }
