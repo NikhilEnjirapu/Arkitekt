@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Send } from 'lucide-react';
+import { MapPin, Phone, Mail, Send, ArrowRight } from 'lucide-react';
 
 export default function ContactForm() {
   const form = useRef();
@@ -26,163 +26,184 @@ export default function ContactForm() {
       });
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1, delayChildren: 0.3 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  };
+
   return (
-    <section id="contact" className="py-24 md:py-32 bg-black-pure relative overflow-hidden">
-      {/* Premium Decorative Lighting */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-500/50 to-transparent"></div>
-      <div className="absolute bottom-0 right-0 w-2/3 h-2/3 bg-gradient-to-tl from-slate-800/30 to-transparent blur-3xl rounded-full z-0 pointer-events-none"></div>
-
+    <section id="contact" className="py-24 md:py-40 bg-black-pure relative overflow-hidden">
+      {/* Luxurious Background Elements */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold-500/5 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-white/5 rounded-full blur-[150px] pointer-events-none"></div>
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16 md:mb-24">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <h2 className="text-xs sm:text-sm font-bold text-gold-500 tracking-[0.2em] uppercase mb-3">Get in Touch</h2>
-            <h3 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white tracking-tight">Start Your Project</h3>
-            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto mt-6 rounded-full opacity-70"></div>
-          </motion.div>
-        </div>
-
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
+        <div className="flex flex-col lg:flex-row items-stretch gap-0 rounded-[2rem] overflow-hidden border border-white/5 shadow-2xl">
           
-          {/* Contact Information */}
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="lg:w-1/3 space-y-10"
-          >
-            <div>
-              <h4 className="text-3xl font-serif font-bold text-white mb-6">Let's Create<br/>Something Beautiful.</h4>
-              <p className="text-slate-400 mb-8 leading-relaxed text-base md:text-lg">
-                Ready to transform your space? Reach out to us today to discuss your vision, and let our experts guide you through the process of bringing your dream interior to life.
-              </p>
+          {/* Left Side: The Studio (Information) */}
+          <div className="lg:w-2/5 bg-charcoal relative p-10 md:p-16 flex flex-col justify-between overflow-hidden">
+            {/* Artistic Overlay */}
+            <div className="absolute inset-0 opacity-20 pointer-events-none">
+              <img 
+                src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                alt="Architecture" 
+                className="w-full h-full object-cover grayscale"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/80 to-transparent"></div>
             </div>
 
-            <div className="space-y-8">
-              <div className="flex items-start group">
-                <div className="flex-shrink-0 mt-1">
-                  <div className="w-14 h-14 bg-white/5 backdrop-blur-md rounded-full flex items-center justify-center text-gold-500 border border-white/5 group-hover:border-gold-500/50 group-hover:shadow-[0_0_15px_rgba(234,179,8,0.3)] transition-all duration-300">
-                    <MapPin size={24} />
-                  </div>
-                </div>
-                <div className="ml-6">
-                  <h5 className="text-lg font-bold text-white tracking-wide">Office Location</h5>
-                  <p className="text-slate-400 mt-2 leading-relaxed">123 Design Boulevard, Suite 400<br/>Creative City, ST 12345</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start group">
-                <div className="flex-shrink-0 mt-1">
-                  <div className="w-14 h-14 bg-white/5 backdrop-blur-md rounded-full flex items-center justify-center text-gold-500 border border-white/5 group-hover:border-gold-500/50 group-hover:shadow-[0_0_15px_rgba(234,179,8,0.3)] transition-all duration-300">
-                    <Phone size={24} />
-                  </div>
-                </div>
-                <div className="ml-6">
-                  <h5 className="text-lg font-bold text-white tracking-wide">Phone Number</h5>
-                  <p className="text-slate-400 mt-2 leading-relaxed">+1 (555) 123-4567</p>
-                </div>
-              </div>
+            <div className="relative z-10">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <h2 className="text-gold-500 text-sm font-bold tracking-[0.3em] uppercase mb-6">Connect</h2>
+                <h3 className="text-5xl md:text-6xl font-serif font-bold text-white leading-tight mb-8">
+                  Let's Define <br/> <span className="italic text-gold-400">Your Space.</span>
+                </h3>
+                <p className="text-slate-400 text-lg leading-relaxed max-w-sm mb-12">
+                  Our studio is dedicated to crafting environments that are as unique as the people who inhabit them.
+                </p>
+              </motion.div>
 
-              <div className="flex items-start group">
-                <div className="flex-shrink-0 mt-1">
-                  <div className="w-14 h-14 bg-white/5 backdrop-blur-md rounded-full flex items-center justify-center text-gold-500 border border-white/5 group-hover:border-gold-500/50 group-hover:shadow-[0_0_15px_rgba(234,179,8,0.3)] transition-all duration-300">
-                    <Mail size={24} />
-                  </div>
-                </div>
-                <div className="ml-6">
-                  <h5 className="text-lg font-bold text-white tracking-wide">Email Address</h5>
-                  <p className="text-slate-400 mt-2 leading-relaxed">info@arkitekt.com</p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Contact Form */}
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="lg:w-2/3"
-          >
-            <div className="glass-dark p-8 md:p-14 rounded-3xl shadow-2xl border border-white/5">
-              <form ref={form} onSubmit={sendEmail} className="space-y-8">
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="space-y-3 relative group">
-                    <label htmlFor="user_name" className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Full Name</label>
-                    <input 
-                      type="text" 
-                      id="user_name"
-                      name="user_name" 
-                      placeholder="John Doe" 
-                      className="w-full bg-black-pure border border-white/5 rounded-xl px-5 py-4 text-white placeholder-slate-600 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all duration-300"
-                      required 
-                    />
-                  </div>
-                  <div className="space-y-3 relative group">
-                    <label htmlFor="user_email" className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Email Address</label>
-                    <input 
-                      type="email" 
-                      id="user_email"
-                      name="user_email" 
-                      placeholder="john@example.com" 
-                      className="w-full bg-black-pure border border-white/5 rounded-xl px-5 py-4 text-white placeholder-slate-600 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all duration-300"
-                      required 
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-3 relative group">
-                  <label htmlFor="project_type" className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Project Type</label>
-                  <select 
-                    id="project_type"
-                    name="project_type" 
-                    defaultValue=""
-                    className="w-full bg-black-pure border border-white/5 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all duration-300 appearance-none cursor-pointer"
-                    required
+              <div className="space-y-10">
+                {[
+                  { icon: MapPin, label: "Studio", value: "123 Design Blvd, Suite 400" },
+                  { icon: Phone, label: "Direct", value: "+1 (555) 123-4567" },
+                  { icon: Mail, label: "Inquiry", value: "hello@arkitekt.com" }
+                ].map((item, i) => (
+                  <motion.div 
+                    key={i}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.4 + (i * 0.1) }}
+                    className="flex items-center gap-6 group"
                   >
-                    <option value="" disabled className="text-slate-500">Select a project type</option>
-                    <option value="Modular Kitchen">Modular Kitchen</option>
-                    <option value="Modular Wardrobe">Modular Wardrobe</option>
-                    <option value="Office Furniture">Office Furniture</option>
-                    <option value="Acrylic/Ply Panels">Acrylic/Ply Panels</option>
-                    <option value="Other">Other Interior/Exterior Work</option>
-                  </select>
-                </div>
-
-                <div className="space-y-3 relative group">
-                  <label htmlFor="message" className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Project Details</label>
-                  <textarea 
-                    id="message"
-                    name="message" 
-                    placeholder="Tell us about your space and requirements..." 
-                    rows="6"
-                    className="w-full bg-black-pure border border-white/5 rounded-xl px-5 py-4 text-white placeholder-slate-600 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all duration-300 resize-none"
-                    required
-                  ></textarea>
-                </div>
-
-                <button 
-                  type="submit" 
-                  disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-gold-600 to-gold-400 hover:from-gold-500 hover:to-gold-300 text-slate-950 py-5 rounded-xl font-bold text-lg tracking-wide transition-all duration-300 flex justify-center items-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed shadow-[0_0_20px_rgba(234,179,8,0.2)] hover:shadow-[0_0_30px_rgba(234,179,8,0.4)]"
-                >
-                  {isSubmitting ? 'Sending...' : (
-                    <>Send Inquiry <Send size={22} /></>
-                  )}
-                </button>
-
-                {submitStatus === 'success' && (
-                  <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="text-green-400 text-center font-medium mt-6 bg-green-400/10 py-3 rounded-lg border border-green-400/20">Message sent successfully! We will get back to you soon.</motion.p>
-                )}
-                {submitStatus === 'error' && (
-                  <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="text-red-400 text-center font-medium mt-6 bg-red-400/10 py-3 rounded-lg border border-red-400/20">Failed to send message. Please try again later.</motion.p>
-                )}
-
-              </form>
+                    <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gold-500 group-hover:bg-gold-500 group-hover:text-black-pure transition-all duration-500">
+                      <item.icon size={20} />
+                    </div>
+                    <div>
+                      <p className="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-bold mb-1">{item.label}</p>
+                      <p className="text-white font-medium">{item.value}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
-          </motion.div>
+
+            <div className="relative z-10 pt-16">
+              <div className="flex gap-6 text-slate-500 text-xs font-bold uppercase tracking-widest">
+                <a href="#" className="hover:text-gold-500 transition-colors">Instagram</a>
+                <a href="#" className="hover:text-gold-500 transition-colors">LinkedIn</a>
+                <a href="#" className="hover:text-gold-500 transition-colors">Pinterest</a>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Side: The Form */}
+          <div className="lg:w-3/5 glass-dark p-10 md:p-16">
+            <motion.form 
+              ref={form} 
+              onSubmit={sendEmail}
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="space-y-12"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <motion.div variants={itemVariants} className="relative group">
+                  <input 
+                    type="text" 
+                    id="user_name"
+                    name="user_name" 
+                    placeholder=" " 
+                    className="peer w-full bg-transparent border-b border-white/10 py-3 text-white focus:outline-none focus:border-gold-500 transition-all duration-500"
+                    required 
+                  />
+                  <label htmlFor="user_name" className="absolute left-0 top-3 text-slate-500 text-sm tracking-widest uppercase transition-all duration-500 peer-focus:-top-4 peer-focus:text-[10px] peer-focus:text-gold-500 peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-[10px]">Full Name</label>
+                </motion.div>
+
+                <motion.div variants={itemVariants} className="relative group">
+                  <input 
+                    type="email" 
+                    id="user_email"
+                    name="user_email" 
+                    placeholder=" " 
+                    className="peer w-full bg-transparent border-b border-white/10 py-3 text-white focus:outline-none focus:border-gold-500 transition-all duration-500"
+                    required 
+                  />
+                  <label htmlFor="user_email" className="absolute left-0 top-3 text-slate-500 text-sm tracking-widest uppercase transition-all duration-500 peer-focus:-top-4 peer-focus:text-[10px] peer-focus:text-gold-500 peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-[10px]">Email Address</label>
+                </motion.div>
+              </div>
+
+              <motion.div variants={itemVariants} className="relative group">
+                <select 
+                  id="project_type"
+                  name="project_type" 
+                  defaultValue=""
+                  className="peer w-full bg-transparent border-b border-white/10 py-3 text-white focus:outline-none focus:border-gold-500 transition-all duration-500 appearance-none cursor-pointer"
+                  required
+                >
+                  <option value="" disabled className="bg-charcoal text-slate-500">Select Project Type</option>
+                  <option value="Modular Kitchen" className="bg-charcoal text-white">Modular Kitchen</option>
+                  <option value="Modular Wardrobe" className="bg-charcoal text-white">Modular Wardrobe</option>
+                  <option value="Full Interior" className="bg-charcoal text-white">Full Interior Design</option>
+                  <option value="Commercial" className="bg-charcoal text-white">Commercial Space</option>
+                </select>
+                <div className="absolute right-0 top-4 pointer-events-none text-slate-500">
+                  <ArrowRight size={16} className="rotate-90" />
+                </div>
+              </motion.div>
+
+              <motion.div variants={itemVariants} className="relative group">
+                <textarea 
+                  id="message"
+                  name="message" 
+                  placeholder=" " 
+                  rows="4"
+                  className="peer w-full bg-transparent border-b border-white/10 py-3 text-white focus:outline-none focus:border-gold-500 transition-all duration-500 resize-none"
+                  required
+                ></textarea>
+                <label htmlFor="message" className="absolute left-0 top-3 text-slate-500 text-sm tracking-widest uppercase transition-all duration-500 peer-focus:-top-4 peer-focus:text-[10px] peer-focus:text-gold-500 peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-[10px]">Tell us about your vision</label>
+              </motion.div>
+
+              <motion.button 
+                variants={itemVariants}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                type="submit" 
+                disabled={isSubmitting}
+                className="group relative w-full overflow-hidden bg-gold-500 py-6 rounded-xl font-bold text-black-pure tracking-[0.2em] uppercase text-xs transition-all duration-500 hover:shadow-[0_0_30px_rgba(234,179,8,0.4)]"
+              >
+                <span className="relative z-10 flex justify-center items-center gap-3">
+                  {isSubmitting ? 'Transmitting...' : (
+                    <>Initialize Inquiry <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform duration-500" /></>
+                  )}
+                </span>
+                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+              </motion.button>
+
+              <AnimatePresence>
+                {submitStatus === 'success' && (
+                  <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="text-gold-400 text-center text-xs font-bold uppercase tracking-widest pt-4">
+                    Connection Established. We will reach out shortly.
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.form>
+          </div>
 
         </div>
       </div>
